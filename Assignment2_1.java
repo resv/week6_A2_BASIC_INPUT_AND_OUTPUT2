@@ -70,10 +70,14 @@
 package week6_A2_BASIC_INPUT_AND_OUTPUT2;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Assignment2_1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		//QUESTION #1 METHOD WITH PARAMETERS WHICH PRINTS OUT THE POST CARD TO CONSOLE 
 		//(INFO IS FAKE, PLEASE DON'T DOX IT!)
@@ -106,36 +110,44 @@ public class Assignment2_1 {
 	}
 	
 	
-	//QUESTION 2 METHOD 
-	private static void writeLetter(String name, String address, String city, String state, String zipcode) {
+	//QUESTION 2 METHOD (ADDED POSTCARD TO ARRAY, PRINT ARRAY INTO THE TXTFILE
+	private static void writeLetter(String name, String address, String city, String state, String zipcode) throws IOException {
 		
 		//INITIALIZE ABSOLUTE FILE ADDRESS 
 		String fileName = "6_2_2.txt";
 		File writeTo = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\PERSCHOLAS PLATFORM JD WORKSPACE"
 												+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\" + fileName);
 		
-		//NOTIFY USER OF WRITE EXECUTION
-		System.out.println("Question 2 : The postcard has been written to the " + fileName + " found in the File_Bank.");
+		//*********//IMPORTANT************ TAKE NOTE THAT FILE WRITER HAS AN ADDITIONAL PARAMETER
+		//TO CREATE NEW FILE (FALSE) WHILE FALSE WOULD BE TO RECREATE FILE
+		FileWriter writer = new FileWriter(writeTo,false);
 		
-		//INITIALIZE SCANNER
 		
-		
+		// INSTANCIATE ARRAYLIST & DOTTED LINE STRING
+		List<String> arr = new ArrayList<>();
 		String dottedLine = "----------------------------------------------------------------";
-		System.out.println(String.format("+%63s%1s" ,dottedLine, "+" ));
-		System.out.println(String.format("|%63s%2s","####","|" ));
-		System.out.println(String.format("|%63s%2s","####","|" ));
-		System.out.println(String.format("|%63s%2s","####","|" ));
-		System.out.println(String.format("|%65s","|" ));
-		System.out.println(String.format("|%65s","|" ));
-		System.out.println(String.format("|%56s%9s",name," |" ));
-		System.out.println(String.format("|%56s%9s",address,"|" ));
-		System.out.println(String.format("|%47s%3s%6s%9s",city,state,zipcode,"|"));		
-		System.out.println(String.format("|%65s","|" ));
-		System.out.println(String.format("+%63s%1s" ,dottedLine, "+" ));
 		
+		//ADD VALUES TO ARRAY
+		arr.add(String.format("+%63s%1s" ,dottedLine, "+" ));
+		arr.add(String.format("|%63s%2s","####","|" ));
+		arr.add(String.format("|%63s%2s","####","|" ));
+		arr.add(String.format("|%63s%2s","####","|" ));
+		arr.add(String.format("|%65s","|" ));
+		arr.add(String.format("|%65s","|" ));
+		arr.add(String.format("|%56s%9s",name," |" ));
+		arr.add(String.format("|%56s%9s",address,"|" ));
+		arr.add(String.format("|%47s%3s%6s%9s",city,state,zipcode,"|"));		
+		arr.add(String.format("|%65s","|" ));
+		arr.add(String.format("+%63s%1s" ,dottedLine, "+" ));
+		
+		//ITERATE AND PRINT EASY ELEMENT OF ARRAY TO THE TXT FILE, WE CHECK FOR n-1 TO MAKE SURE WE DON'T ADD AN EXTRA LINEBREAK
+		for (int i = 0; i < arr.size(); i++) {
+			String data = arr.get(i).toString();
+			writer.write(data);
+			if (i < arr.size()-1) {
+				writer.write("\r\n");
+			}
+		}
+		writer.close();
 	}
-	
-	
-	
-	
 }
