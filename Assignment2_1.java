@@ -95,6 +95,7 @@ public class Assignment2_1 {
 	//QUESTION 1 METHOD
 	private static void displayLetter(String name, String address, String city, String state, String zipcode) {
 		System.out.println("QUESTION 1--------------------------------------------------------");
+		System.out.println("(PRINTING OUT POST CARD)\r\n");
 		String dottedLine = "----------------------------------------------------------------";
 		System.out.println(String.format("+%63s%1s" ,dottedLine, "+" ));
 		System.out.println(String.format("|%63s%2s","####","|" ));
@@ -112,11 +113,15 @@ public class Assignment2_1 {
 	
 	//QUESTION 2 METHOD (ADDED POSTCARD TO ARRAY, PRINT ARRAY INTO THE TXTFILE
 	private static void writeLetter(String name, String address, String city, String state, String zipcode) throws IOException {
+		System.out.println("\r\nQUESTION 2--------------------------------------------------------");
+		
+		//NOTIFY USER OF WRITE EXECUTION
+		System.out.println("(THE POSTCARD HAS BEEN WRITTEN INTO THE 6_2_2.TXT FOUND IN THE FILE_BANK.)");
+				
 		
 		//INITIALIZE ABSOLUTE FILE ADDRESS 
-		String fileName = "6_2_2.txt";
 		File writeTo = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\PERSCHOLAS PLATFORM JD WORKSPACE"
-												+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\" + fileName);
+												+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\6_2_2.txt");
 		
 		//*********//IMPORTANT************ TAKE NOTE THAT FILE WRITER HAS AN ADDITIONAL PARAMETER
 		//TO CREATE NEW FILE (FALSE) WHILE FALSE WOULD BE TO RECREATE FILE
@@ -148,6 +153,7 @@ public class Assignment2_1 {
 				writer.write("\r\n");
 			}
 		}
+		//CLOSING WRITER
 		writer.close();
 	}
 }
