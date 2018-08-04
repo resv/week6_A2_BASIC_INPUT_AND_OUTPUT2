@@ -114,7 +114,7 @@ public class Assignment2_1to3 {
 		writer.close();
 	}
 	
-//--QUESTION 3 METHO (ASKS FOR NAME & GRADE, PRINT TO A FILE)
+//--QUESTION 3 METHOD (ASKS FOR NAME & GRADE, PRINT TO A FILE)
 	private static void writeNameNumber() throws IOException {
 		System.out.println("\r\nQUESTION 3--------------------------------------------------------");
 		
