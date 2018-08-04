@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Assignment2_1 {
+public class Assignment2_1to3 {
 
 	public static void main(String[] args) throws IOException {
 
