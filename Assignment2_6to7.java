@@ -91,8 +91,28 @@ public class Assignment2_6to7 {
 		puzzleReader.close();
 	}
 	
-	private static void puzzle2() {
+	private static void puzzle2() throws FileNotFoundException {
+		//INITIALIZE ARRAYLIST, FILE ADDRESS, AND SCANNER
+		List<String> arr2 = new ArrayList<>();
+		File puzzleFile2 = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\PERSCHOLAS PLATFORM JD WORKSPACE"
+															+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\puzzle2.txt");
+		Scanner puzzleReader2= new Scanner(puzzleFile2);
 		
-		
+		//SEPERATE EACH LETTER INTO AN ELEMENT INTO AN ARRAY
+		String[] data2 = puzzleReader2.nextLine().split("");
+				
+		//FOR LOOP TO ADD EACH SPLIT STRING/CHAR INTO ARRAYLIST
+		for (int i = 0; i < data2.length; i+=3) {
+			arr2.add(data2[i]);
+		}
+				
+		//APPENDS ARRAYLIST ELEMENTS
+		String join2 = String.join("",arr2);
+				
+		//PRINTS JOINED ARRAYLIST
+		System.out.println(join2);
+				
+		//CLOSES READER
+		puzzleReader2.close();
 	}
 }
