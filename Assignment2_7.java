@@ -17,6 +17,7 @@ package week6_A2_BASIC_INPUT_AND_OUTPUT2;
 
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -30,6 +31,7 @@ public class Assignment2_7 {
 				+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\CrazyTextModified.txt");
 
 		Scanner reader = new Scanner(readin);
+		FileWriter writer = new FileWriter(writeTo,false);
 		String[] data;
 
 		// USING WHILE LOOP TO SPLIT SPACES AND ADD INTEGERS INTO AN ARRAY
@@ -51,12 +53,15 @@ public class Assignment2_7 {
 			
 			for (int i = 0; i < data.length; i++) {
 				while (i < data.length) {
-					System.out.printf(data[i]);
+					writer.write(data[i]);
 					i++;
 				}
-				System.out.printf(" ");
+				writer.write(" ");
 			}
 		}
+		System.out.println("File was read from CRAZYTEXT.TXT and WRITTEN INTO "
+						+ "CrazyTextModified.txt with the vowels capitilized");
 		reader.close();
+		writer.close();
 	}
 }
