@@ -39,7 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Assignment2_6to7 {
+public class Assignment2_6 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.println("\r\nQUESTION 6--------------------------------------------------------");
