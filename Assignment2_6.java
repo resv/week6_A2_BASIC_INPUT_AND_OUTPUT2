@@ -15,21 +15,7 @@
 		Sample Output:
 		Open which file: puzzle2.txt
 		This_is_the_right_message_from_sample2.txt
-
-
-	7.	CREATE A FILE CRAZYTEXT.TXT AND WRITE THE FOLLOWING TEXT:
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	
-		Create a second file CrazyTextModified.txt and it should be empty initially.
-		Write a program that would reads the text in CrazyText.txt and output it to 
-		CrazyTextModified.txt with every vowel capitalize.
 */
-
 
 package week6_A2_BASIC_INPUT_AND_OUTPUT2;
 
