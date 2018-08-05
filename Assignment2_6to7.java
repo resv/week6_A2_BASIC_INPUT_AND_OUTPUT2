@@ -44,6 +44,7 @@ public class Assignment2_6to7 {
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.println("\r\nQUESTION 6--------------------------------------------------------");
 		
+		//INITILIZE SCANNER
 		Scanner scanner = new Scanner(System.in);
 		
 		//INSTRUCTIONS FOR THE USER
@@ -52,7 +53,7 @@ public class Assignment2_6to7 {
 		String choice = scanner.nextLine();
 
 			
-		
+		//GET CHOICE FROM USER
 		switch (choice.toLowerCase()) {
 		case "a" :	puzzle();
 					break;
@@ -60,6 +61,7 @@ public class Assignment2_6to7 {
 					break;
 	
 		}
+		//CLOSES SCANNER
 		scanner.close();
 	}
 
