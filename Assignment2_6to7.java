@@ -33,10 +33,56 @@
 
 package week6_A2_BASIC_INPUT_AND_OUTPUT2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Assignment2_6to7 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
+		System.out.println("\r\nQUESTION 6--------------------------------------------------------");
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		//INSTRUCTIONS FOR THE USER
+		System.out.println("Hello, which file would you like to open?");
+		System.out.println("A. puzzle.txt \r\nB. puzzle2.txt");
+		String choice = scanner.nextLine();
 
+			
+		
+		switch (choice.toLowerCase()) {
+		case "a" :	puzzle();
+					break;
+		case "b" :	puzzle2();
+					break;
+	
+		}
+		scanner.close();
 	}
 
+
+
+	private static void puzzle() throws FileNotFoundException {
+		List<String> arr = new ArrayList<>();
+		File puzzleFile = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\PERSCHOLAS PLATFORM JD WORKSPACE"
+													+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\puzzle.txt");
+		Scanner puzzleReader= new Scanner(puzzleFile);
+		String[] data = puzzleReader.nextLine().split("");
+		
+		for (int i = 0; i < data.length; i+=3) {
+			arr.add(data[i]);
+		}
+		
+		System.out.println(arr);
+		
+		puzzleReader.close();
+	}
+	
+	private static void puzzle2() {
+		
+		
+	}
 }
