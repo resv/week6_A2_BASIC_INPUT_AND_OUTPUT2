@@ -66,18 +66,28 @@ public class Assignment2_6to7 {
 
 
 	private static void puzzle() throws FileNotFoundException {
+		
+		//INITIALIZE ARRAYLIST, FILE ADDRESS, AND SCANNER
 		List<String> arr = new ArrayList<>();
 		File puzzleFile = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\PERSCHOLAS PLATFORM JD WORKSPACE"
 													+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\puzzle.txt");
 		Scanner puzzleReader= new Scanner(puzzleFile);
+		
+		//SEPERATE EACH LETTER INTO AN ELEMENT INTO AN ARRAY
 		String[] data = puzzleReader.nextLine().split("");
 		
+		//FOR LOOP TO ADD EACH SPLIT STRING/CHAR INTO ARRAYLIST
 		for (int i = 0; i < data.length; i+=3) {
 			arr.add(data[i]);
 		}
 		
-		System.out.println(arr);
+		//APPENDS ARRAYLIST ELEMENTS
+		String join = String.join("",arr);
 		
+		//PRINTS JOINED ARRAYLIST
+		System.out.println(join);
+		
+		//CLOSES READER
 		puzzleReader.close();
 	}
 	
