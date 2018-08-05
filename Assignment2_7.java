@@ -24,17 +24,21 @@ import java.util.Scanner;
 public class Assignment2_7 {
 
 	public static void main(String[] args) throws IOException {
+		
+		//INITILIZE FILE PATHS
+		File readin = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\"
+				+ "PERSCHOLAS PLATFORM JD WORKSPACE\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2"
+				+ "\\FILE_BANK\\CRAZYTEXT.TXT");
+		File writeTo = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\"
+				+ "PERSCHOLAS PLATFORM JD WORKSPACE\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2"
+				+ "\\FILE_BANK\\CrazyTextModified.txt");
 
-		File readin = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\PERSCHOLAS PLATFORM JD WORKSPACE"
-				+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\CRAZYTEXT.TXT");
-		File writeTo = new File("C:\\Users\\akim4\\Google Drive\\CODE\\JAVAPROGRAMS\\PERSCHOLAS PLATFORM JD WORKSPACE"
-				+ "\\src\\week6_A2_BASIC_INPUT_AND_OUTPUT2\\FILE_BANK\\CrazyTextModified.txt");
-
+		//INITIALIZE SCANNER/WRITER/ARRAY
 		Scanner reader = new Scanner(readin);
 		FileWriter writer = new FileWriter(writeTo,false);
 		String[] data;
 
-		// USING WHILE LOOP TO SPLIT SPACES AND ADD INTEGERS INTO AN ARRAY
+		// USING WHILE LOOP TO SPLIT STRING INTO INDIVIDUAL ARRAYS, CHECKS FOR VOWELS
 		while (reader.hasNextLine()) {
 			data = reader.next().split("");
 			for (int i = 0; i < data.length; i++) {
@@ -50,7 +54,7 @@ public class Assignment2_7 {
 					data[i] = "U";
 				}
 			}
-			
+			//ADDS A SPACE TO THE WRITER
 			for (int i = 0; i < data.length; i++) {
 				while (i < data.length) {
 					writer.write(data[i]);
@@ -59,8 +63,11 @@ public class Assignment2_7 {
 				writer.write(" ");
 			}
 		}
-		System.out.println("File was read from CRAZYTEXT.TXT and WRITTEN INTO "
-						+ "CrazyTextModified.txt with the vowels capitilized");
+		//NOTIFY USER OF EXECUTION
+		System.out.println("File was read from \"CRAZYTEXT.TXT\" and WRITTEN INTO \r\n"
+						+ "\"CrazyTextModified.txt\" with the vowels capitilized.");
+		
+		//CLOSES SCANNER AND WRITER
 		reader.close();
 		writer.close();
 	}
